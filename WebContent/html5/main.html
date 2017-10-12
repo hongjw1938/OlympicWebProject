@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>알쓸올잡</title>
+<meta  charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- wordcloud2 구현부문 -->
+<link rel='stylesheet' href='/project/resources/css/nv.d3.css'>
+<link rel='stylesheet' href='/project/resources/css/rNVD3.css'>
+    
+<script src='/project/resources/js/jquery-1.8.2.min.js' type='text/javascript'></script>
+<script src='/project/resources/js/d3.v3.min.js' type='text/javascript'></script>
+<script src='/project/resources/js/nv.d3.min-new.js' type='text/javascript'></script>
+<script src='/project/resources/js/fisheye.js' type='text/javascript'></script> 
+
+<!-- wordcloud2 구현용 --> 
+<script src="/project/resources/wordcloud2/htmlwidgets-0.8/htmlwidgets.js?ver=2"></script>
+<link href="/project/resources/wordcloud2/wordcloud2-0.0.1/wordcloud.css" rel="stylesheet">
+<script src="/project/resources/wordcloud2/wordcloud2-0.0.1/wordcloud2-all.js"></script>
+<script src="/project/resources/wordcloud2/wordcloud2-0.0.1/hover.js"></script>
+<script src="/project/resources/wordcloud2/wordcloud2-binding-0.2.0/wordcloud2.js?ver=2"></script>
+	  
+<style>
+	@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+	
+	 h2 {
+	 	text-align : center;
+	 	font-family: 'Jeju Gothic', sans-serif;
+	 	font-size:35pt;
+	 	letter-spacing : 10px;
+	 }
+	 
+	 p {
+	 	font-family: 'Jeju Gothic', sans-serif;
+	 	font-size:15pt;
+	 }
+	 
+	 span {
+	 	font-size:45pt;
+	 }
+	 
+	* {
+		box-sizing:border-box;
+	}
+	
+	body {
+		font-family: "NanumSqaure Bold";
+	}
+	
+    .rChart {
+      	display: block;
+      	margin-left: auto; 
+      	margin-right: auto;
+      	width: 800px;
+      	height: 400px;
+    }  
+  	.container-fluid {
+  		padding-top: 70px;
+    	padding-bottom: 70px;
+	}
+	.bg-1 { 
+		background-color: white; /* gold */
+        color: #ffffff;
+    }
+    .bg-4 { 
+    	background-color: #a1d6e2; /* red */
+        color: #ffffff;
+    }
+    .bg-2 { 
+      	background-color: #1995ad; /* Dark Blue */
+      	color: #ffffff;
+    }
+  	.bg-3 { 
+  		background-color: white; /* White */
+      	color: #555555;
+  	}
+  	.mySlides {
+  		display:none
+  	}
+
+	/* Slideshow container */
+	.slideshow-container {
+	  	max-width: 1000px;
+	  	position: relative;
+	  	margin: auto;
+	}
+
+	/* Caption text */
+	.text {
+		color: #f2f2f2;
+  		font-size: 15px;
+	  	padding: 8px 12px;
+	  	position: absolute;
+	  	bottom: 8px;
+	  	width: 100%;
+	  	text-align: center;
+	}
+
+	/* Number text (1/3 etc) */
+	.numbertext {
+	  	color: #f2f2f2;
+	  	font-size: 12px;
+	  	padding: 8px 12px;
+	  	position: absolute;
+	  	top: 0;
+	}
+	
+	/* The dots/bullets/indicators */
+	.dot {
+	  	height: 13px;
+	  	width: 13px;
+	  	margin: 0 2px;
+	  	background-color: #bbb;
+	  	border-radius: 50%;
+	  	display: inline-block;
+	  	transition: background-color 0.6s ease;
+	}
+	.active {
+	  	background-color: #717171;
+	}
+	
+	/* Fading animation */
+	.fade {
+	  	-webkit-animation-name: fade;
+	  	-webkit-animation-duration: 1.5s;
+	  	animation-name: fade;
+	  	animation-duration: 1.5s;
+	}
+	
+	@-webkit-keyframes fade {
+	  	from {opacity: .4} 
+	  	to {opacity: 1}
+	}
+	
+	@keyframes fade {
+	  	from {opacity: .4} 
+	  	to {opacity: 1}
+	}
+	
+	/* On smaller screens, decrease text size */
+	@media only screen and (max-width: 300px) {
+	  .text {
+	  	font-size: 11px
+	  }
+	}
+	
+</style>
+</head>
+
+<body>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-blue w3-card-2">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/project/html/main.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="https://hongjw1991.shinyapps.io/olympicproject/" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CHARTS</a>
+    <a href="/project/news.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BOARD</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">VOTE <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="/project/html/mascot.html" class="w3-bar-item w3-button">역대 마스코트</a>
+        <a href="/project/html/logo.html" class="w3-bar-item w3-button">역대 올림픽마크</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-1 text-center">
+
+<div class="slideshow-container">
+<div class="mySlides fade">
+  <img src="../images/main/logo1.png" width="500" height="300">
+</div>
+<div class="mySlides fade">
+  <img src="../images/main/logo2.png" width="500" height="300">
+</div>
+<div class="mySlides fade">
+  <img src="../images/main/logo3.png" width="500" height="300">
+</div>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<!--  D-day count -->
+<div class="container-fluid bg-4 text-center">
+ <div class="middle">
+    <p id="demo" style="font-size:26pt"></p>
+  </div>
+</div>
+
+<!--  -->
+<div class="container-fluid bg-2" >
+<h2>당신의 마스코트에게 투표하세요 ♡</h2>
+<br>
+<br>
+<a href="/project/html/mascot.html"><img src="../images/main/마스코트.PNG"> </a>
+  <div style="margin-left : 100px">
+  <br>
+  <br>
+  
+  
+  
+  </div>
+</div>
+<div class="container-fluid bg-3 text-center"> 
+  <h2>흥미로운 기록 보기</h2>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="../images/main/pytest.png" width="200" height="200" >
+      <p>2017 평창</p>
+     
+  	</div>
+    <div class="col-sm-4">
+      <img src="../images/main/mytest.png" width="200" height="200" >
+      <p>2016 리우</p>
+    </div>
+    <div class="col-sm-4"> 
+      <img src="../images/main/pctest.png" width="200" height="200" >
+      <p>2014 소치</p>
+    </div>
+     <div class="col-sm-4">
+      <img src="../images/main/2012.png" width="200" height="200" >
+      <p>2012 런던</p>
+  	</div>
+    <div class="col-sm-4">
+      <img src="../images/main/2010.png" width="200" height="200" >
+      <p>2010 밴쿠버</p>
+    </div>
+    <div class="col-sm-4"> 
+      <img src="../images/main/2008.png" width="200" height="200" >
+      <p>2008 베이징</p>
+    </div>
+  </div>
+ 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/ZgDvhixeQg0" frameborder="0" allowfullscreen></iframe>
+<!--   <button class="btn btn-info btn-md">더 보기</button> -->
+</div>
+</div>
+
+<script>
+	var slideIndex = 0;
+	showSlides();
+
+	function showSlides() {
+    	var i;
+    	var slides = document.getElementsByClassName("mySlides");
+    	var dots = document.getElementsByClassName("dot");
+    	
+    	for (i = 0; i < slides.length; i++) {
+       	slides[i].style.display = "none";  
+    	}
+    	
+    	slideIndex++;
+    	
+    	if (slideIndex> slides.length) {
+    		slideIndex = 1
+    	}    
+    	
+    	for (i = 0; i < dots.length; i++) {
+        	dots[i].className = dots[i].className.replace(" active", "");
+    	}
+    	
+    	slides[slideIndex-1].style.display = "block";  
+    	dots[slideIndex-1].className += " active";
+    	setTimeout(showSlides, 2000); // Change image every 2 seconds
+	}
+	
+	// Set the date we're counting down to
+	var countDownDate = new Date("Feb 9, 2018 20:00:00").getTime();
+
+	// Update the count down every 1 second
+	var countdownfunction = setInterval(function() {
+
+    	// Get todays date and time
+    	var now = new Date().getTime();
+    
+    	// Find the distance between now an the count down date
+    	var distance = countDownDate - now;
+    
+    	// Time calculations for days, hours, minutes and seconds
+    	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    	// Output the result in an element with id="demo"
+    	document.getElementById("demo").innerHTML = "평창 올림픽까지  " + "<span>" + days + "일 " + hours + "시 "
+    	+ minutes + "분 " + seconds + "초" + "</span>" + " 남았습니다";
+    
+    	// If the count down is over, write some text 
+    	if (distance < 0) {
+        	clearInterval(countdownfunction);
+        	document.getElementById("demo").innerHTML = "EXPIRED";
+    	}
+	}, 1000);
+</script>
+</body>
+</html>

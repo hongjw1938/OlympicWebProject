@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Mascot Vote</title>
+<style>
+	@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+	
+	 h1{
+	 	text-align : center;
+	 	font-family: 'Jeju Gothic', sans-serif;
+	 	font-size:35pt;
+	 	letter-spacing : 5px;
+	 }
+	 
+	table {
+		font-family: "나눔스퀘어 ";  
+		text-align: center;
+		margin-top: 70px; 
+		margin-bottom : 70px; 
+		margin-left : auto; 
+		margin-right :auto;
+		padding : 10px;	
+	}
+
+	td { 
+		height : 20px; 
+		width : 100px; 
+		padding : 20px;
+		font-family: 'Jeju Gothic', sans-serif;
+	}
+	
+	tr:nth-child(even) {
+		background : aliceblue;
+	}
+
+	body {		   
+		text-align: center;
+	}
+	
+	img {
+		width: 200px;
+		height: 153px;
+	}
+	
+	.container-fluid {
+    	padding-top: 70px;
+    	padding-bottom: 70px;
+	}
+	
+ 	.bg-1 { 
+       background-color: #6eb5c0; /* gold */
+       color: #ffffff;
+    }	
+</style>
+</head>
+<body>
+<div class="w3-top">
+  <div class="w3-bar w3-blue w3-card-2">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/project/html/main.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="https://hongjw1991.shinyapps.io/olympicproject/" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CHARTS</a>
+    <a href="/project/news.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BOARD</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">VOTE <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="/project/html/mascot.html" class="w3-bar-item w3-button">역대 마스코트</a>
+        <a href="/project/html/logo.html" class="w3-bar-item w3-button">역대 올림픽마크</a>
+      </div>
+    </div>
+     </div>
+</div>
+<div class="container-fluid bg-1 text-center">
+<h1>당신의 마스코트에게 투표하세요♡</h1>
+</div>
+<table>
+<tr>
+	<td>1972 뮌헨</td>
+	<td>1976 인스부르크</td>
+	<td>1976 몬트리올</td>
+	<td>1980 레이크 플래시드</td>
+</tr>
+<tr>
+	<td><a href="/project/mascots?name=발디"> <img src="../images/mascots/1972Munich_WALDI.jpg"></a></td>
+	<td><a href="/project/mascots?name=슈네만"><img src="../images/mascots/1976Innsbruck_SCHNEEMANN.jpg"></a></td>
+	<td><a href="/project/mascots?name=아믹"> <img src="../images/mascots/1976Montreal_AMIK.jpg"></a></td>
+	<td><a href="/project/mascots?name=로니"> <img src="../images/mascots/1980LakePlacid_RONI.jpg"></a></td>
+</tr>
+<tr>
+	<td>발디</td>
+	<td>슈네만</td>
+	<td>아믹</td>
+	<td>로니</td>
+</tr>
+<tr>
+	<td>1980 모스크바</td>
+	<td>1984 사라예보</td>
+	<td>1984 로스앤젤레스</td>
+	<td>1988 캘거리</td>
+</tr>
+<tr>
+	<td><a href="/project/mascots?name=미샤">    <img src="../images/mascots/1980Moscow_MISHA.JPG"></a></td>
+	<td><a href="/project/mascots?name=부코">    <img src="../images/mascots/1984Sarajevo_VUCKO.jpg"></a></td>
+	<td><a href="/project/mascots?name=샘">     <img src="../images/mascots/1984LosAngeles_SAM.jpg"></a></td>
+	<td><a href="/project/mascots?name=하이디외1"><img src="../images/mascots/1988Calgary_HIDY AND HOWDY.jpg"></a></td>
+</tr>
+<tr>
+	<td>미샤</td>
+	<td>부코</td>
+	<td>샘</td>
+	<td>하이디&하우디</td>
+</tr>
+<tr>
+	<td>1988 서울</td>
+	<td>1992 알베르빌</td>
+	<td>1992 바르셀로나</td>
+	<td>1994 릴레함메르</td>
+</tr>
+<tr>
+	<td><a href="/project/mascots?name=호돌이"> <img src="../images/mascots/1988Seoul_HODORI.jpg"></a></td>
+	<td><a href="/project/mascots?name=마지크"> <img src="../images/mascots/1992Albertville_MAGIQUE.jpg"></a></td>
+	<td><a href="/project/mascots?name=코비">  <img src="../images/mascots/1992Barcelona_COBI.jpg"></a></td>
+	<td><a href="/project/mascots?name=하콘외1"><img src="../images/mascots/1994Lillehammer_HAAKON AND KRISTIN.jpg"></a></td>
+</tr>
+<tr>
+	<td>호돌이</td>
+	<td>마지크</td>
+	<td>코비</td>
+	<td>하콘&크리스틴</td>
+</tr>
+<tr>
+	<td>1996 애틀랜타</td>
+	<td>1998 나가노</td>
+	<td>2000 시드니</td>
+	<td>2002 솔트레이크시티</td>
+</tr>
+<tr>
+	<td><a href="/project/mascots?name=이지">   <img src="../images/mascots/1996Atlanta_IZZY.jpg"></a></td>
+	<td><a href="/project/mascots?name=스키외3"> <img src="../images/mascots/1998Nagano_SUKKI, NOKKI, LEKKI AND TSUKKI.jpg"></a></td>
+	<td><a href="/project/mascots?name=시드외2"> <img src="../images/mascots/2000Sydney_SYD, OLLY AND MILLIE.jpg"></a></td>
+	<td><a href="/project/mascots?name=파우더외2"><img src="../images/mascots/2002SaltLakeCity_POWDER, COAL AND COPPER.jpg"></a></td>
+</tr>
+<tr>
+	<td>이지</td>
+	<td>스키, 노키, 레키, 츠키</td>
+	<td>시드, 올리, 밀리</td>
+	<td>파우더, 콜, 코퍼</td>
+</tr>
+<tr>
+	<td>2004 아테네</td>
+	<td>2006 토리노</td>
+	<td>2008 베이징</td>
+	<td>2010 밴쿠버</td>
+</tr>
+<tr>
+	<td><a href="/project/mascots?name=포보스외1"> <img src="../images/mascots/2004Athens_PHEVOS AND ATHENA.jpg"></a></td>
+	<td><a href="/project/mascots?name=네베외1">  <img src="../images/mascots/2006Turin_NEVE AND GLIZ.jpg"></a></td>
+	<td><a href="/project/mascots?name=베이베이외4"><img src="../images/mascots/2008Beijing_BEIBEI, JINGJING, HUANHUAN, YINGYING, NINI.jpg"></a></td>
+	<td><a href="/project/mascots?name=콰치외1">  <img src="../images/mascots/2010Vancouver_QUATCHI AND MIGA.jpg"></a></td>
+</tr>
+<tr>
+	<td>포보스, 아테나</td>
+	<td>네베, 글리즈</td>
+	<td>베이베이, 징징, 환환, 잉잉, 니니</td>
+	<td>콰치, 미가</td>
+</tr>
+<tr>
+	<td>2012 런던</td>
+	<td>2014 소치</td>
+	<td>2016 리우데자네이루</td>
+	<td>2018 평창</td>
+</tr>
+<tr>
+	<td><a href="/project/mascots?name=웬록">     <img src="../images/mascots/2012London_WENLOCK.jpg"></a></td>
+	<td><a href="/project/mascots?name=토끼외2">   <img src="../images/mascots/2014Sochi_HARE, POLAR BEAR AND LEOPARD.jpg"></a></td>
+	<td><a href="/project/mascots?name=비니시우스"> <img src="../images/mascots/2016Rio_VINICIUS.jpg"></a></td>
+	<td><a href="/project/mascots?name=수호랑">    <img src="../images/mascots/2018PyeongChang_SOOHORANG.jpg"></a></td>
+</tr>
+<tr>
+	<td>웬록</td>
+	<td>토끼, 북극곰, 눈표범</td>
+	<td>비니시우스</td>
+	<td>수호랑</td>
+</tr>
+</table>
+</body>
+</html>

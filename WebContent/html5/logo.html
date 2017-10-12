@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Logo Vote</title>
+<style>
+	@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+	
+	 h1{
+	 	text-align : center;
+	 	font-family: 'Jeju Gothic', sans-serif;
+	 	font-size:35pt;
+	 	letter-spacing : 5px;
+	 }
+	 
+	table {
+		font-family: "나눔스퀘어 ";  
+		text-align: center;
+		margin-top: 70px; 
+		margin-bottom : 70px; 
+		margin-left : auto; 
+		margin-right :auto;
+		padding : 10px;	
+	}
+
+	td { 
+		height : 20px; 
+		width : 100px; 
+		padding : 20px;
+		font-family: 'Jeju Gothic', sans-serif;
+	}
+	
+	tr:nth-child(even) {
+		background : aliceblue;
+	}
+
+	body {		   
+		text-align: center;
+	}
+	
+	img {
+		width: 200px;
+		height: 153px;
+	}
+	
+	.container-fluid {
+    	padding-top: 70px;
+    	padding-bottom: 70px;
+	}
+	
+ 	.bg-1 { 
+       background-color: #6eb5c0; /* gold */
+       color: #ffffff;
+    }	
+    
+</style>
+</head>
+<body>
+<div class="w3-top">
+  <div class="w3-bar w3-blue w3-card-2">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/project/html/main.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="https://hongjw1991.shinyapps.io/olympicproject/" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CHARTS</a>
+    <a href="/project/news.do" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BOARD</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">VOTE <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="/project/html/mascot.html" class="w3-bar-item w3-button">역대 마스코트</a>
+        <a href="/project/html/logo.html" class="w3-bar-item w3-button">역대 올림픽마크</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid bg-1 text-center">
+<h1>당신의 올림픽 로고에 투표하세요♡</h1></div>
+<table>
+<tr>
+	<td><a href="/project/logo?loc=뮌헨">    <img src="../images/logos/1972Munich.png"></a></td>
+    <td><a href="/project/logo?loc=삿포로">   <img src="../images/logos/1972Sapporo.png"></a></td>
+    <td><a href="/project/logo?loc=인스부르크"><img src="../images/logos/1976Innsbruck.png"></a></td>
+    <td><a href="/project/logo?loc=몬트리올"> <img src="../images/logos/1976Montreal.png"></a></td>
+</tr>
+<tr>
+	<td>1972 뮌헨</td>
+	<td>1972 삿포로</td>
+	<td>1976 인스부르크 </td>
+	<td>1976 몬트리올</td>
+</tr>
+<tr>
+	<td><a href="/project/logo?loc=레이크 플래시드"> <img src="../images/logos/1980LakePlacid.png"></a></td>
+	<td><a href="/project/logo?loc=모스크바">     <img src="../images/logos/1980MoscowSoviet.png"></a></td>
+	<td><a href="/project/logo?loc=사라예보">     <img src="../images/logos/1984Sarajevo.png"></a></td>
+	<td><a href="/project/logo?loc=로스앤젤레스">  <img src="../images/logos/1984LosAngeles.png"></a></td>
+</tr>
+<tr>
+	<td>1980 레이크 플래시드</td>
+	<td>1980 모스크바</td>
+	<td>1984 사라예보</td>
+	<td>1984 로스앤젤레스</td>
+</tr>
+<tr>
+	<td><a href="/project/logo?loc=캘거리">    <img src="../images/logos/1988Calgary.png"></a></td>
+	<td><a href="/project/logo?loc=서울">     <img src="../images/logos/1988Seoul.png"></a></td>
+	<td><a href="/project/logo?loc=알베르빌">   <img src="../images/logos/1992Albertville.png"></a></td>
+	<td><a href="/project/logo?loc=바르셀로나">  <img src="../images/logos/1992Barcelona.png"></a></td>
+</tr>
+<tr>
+	<td>1988 캘거리</td>
+	<td>1988 서울</td>
+	<td>1992 알베르빌</td>
+	<td>1992 바르셀로나</td>
+</tr>	
+<tr>
+	<td><a href="/project/logo?loc=릴레함메르"> <img src="../images/logos/1994Lillehammer.png"></a></td>
+	<td><a href="/project/logo?loc=애틀랜타">  <img src="../images/logos/1996Atlanta.png"></a></td>
+	<td><a href="/project/logo?loc=나가노">   <img src="../images/logos/1998Nagano.png"></a></td>
+	<td><a href="/project/logo?loc=시드니">   <img src="../images/logos/2000Sydney.png"></a></td>
+</tr>
+<tr>
+	<td>1994 릴레함메르</td>
+	<td>1996 애틀랜타</td>
+	<td>1998 나가노</td>
+	<td>2000 시드니</td>
+</tr>
+<tr>
+	<td><a href="/project/logo?loc=솔트레이크시티"> <img src="../images/logos/2002SaltLakeCity.png"></a></td>
+	<td><a href="/project/logo?loc=아테네">      <img src="../images/logos/2004Athens.png"></a></td>
+	<td><a href="/project/logo?loc=토리노">      <img src="../images/logos/2006Torino.png"></a></td>
+	<td><a href="/project/logo?loc=베이징">      <img src="../images/logos/2008Beijing.png"></a></td>
+</tr>
+<tr>
+	<td>2002 솔트레이크시티</td>
+	<td>2004 아테네</td>
+	<td>2006 토리노</td>
+	<td>2008 베이징</td>
+</tr>
+<tr>
+	<td><a href="/project/logo?loc=벤쿠버">    <img src="../images/logos/2010Vancouver.png"></a></td>
+	<td><a href="/project/logo?loc=런던">      <img src="../images/logos/2012London.png"></a></td>
+	<td><a href="/project/logo?loc=소치">      <img src="../images/logos/2014Sochi.png"></a></td>
+	<td><a href="/project/logo?loc=리우데자네이루"><img src="../images/logos/2016Rio.png"></a></td>
+</tr>
+<tr>
+	<td>2010 밴쿠버</td>
+	<td>2012 런던</td>
+	<td>2014 소치</td>
+	<td>2016 리우데자네이루</td>
+</tr>
+<tr>
+	<td><a href="/project/logo?loc=평창"> <img src="../images/logos/2018PyeongChang.png"></a></td>
+	<td><a href="/project/logo?loc=도쿄"> <img src="../images/logos/2020Tokyo.png"></a></td>
+	<td><a href="/project/logo?loc=베이징2"> <img src="../images/logos/2022Beijing.jpg"></a></td>
+	<td><a href="/project/logo?loc=파리"> <img src="../images/logos/2024Paris.png"></a></td>
+</tr>
+<tr>
+	<td>2018 평창</td>
+	<td>2020 도쿄</td>
+	<td>2022 베이징</td>
+	<td>2024 파리</td>
+</tr>
+<tr>
+	<td><a href="/project/logo?loc=로스앤젤레스2"> <img src="../images/logos/2028LosAngeles.png"></a></td>
+</tr>
+<tr>
+	<td>2028 로스앤젤레스</td>
+</tr>
+<tr><td></td></tr>
+</table>
+</body>
+</html>
